@@ -1,0 +1,30 @@
+#ifndef MEM_LAYOUT_H
+#define MEM_LAYOUT_H
+
+/* Non-secure FLASH for CODE execution */
+#define REGION_CODE_NS_START 0x8040000
+#define REGION_CODE_NS_PADDR 0x8040000
+#define REGION_CODE_NS_SIZE 0x40000
+
+/* Secure FLASH for CODE execution */
+#define REGION_CODE_S_START 0xC000000
+#define REGION_CODE_S_PADDR 0x8000000
+#define REGION_CODE_S_SIZE 0x3E000
+
+/* Secure FLASH for CODE Veneer table */
+#define REGION_VENEER_START 0xC03E000
+#define REGION_VENEER_PADDR 0x803E000
+#define REGION_VENEER_SIZE 0x2000
+
+/* Non-secure RAM for DATA section */
+#define REGION_DATA_NS_START 0x2000000
+#define REGION_DATA_NS_PADDR 0x2000000
+#define REGION_DATA_NS_SIZE 0x20000
+
+/* Secure RAM for DATA section */
+#define REGION_DATA_S_START 0x3020000
+#define REGION_DATA_S_PADDR 0x2020000
+#define REGION_DATA_S_SIZE 0x20000
+
+
+#endif

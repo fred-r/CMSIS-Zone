@@ -59,3 +59,68 @@ following steps:
 6. Connect the STM32L552E-EVAL using a Micro-USB cable at CN22.
 7. Assure that ST-Link Debugger is selected and the ST-Link/V2-1 is used.
 8. Launch a debug session and watch the serial console output.
+
+
+fred-r's tweaks to play around with Handlebars
+----------------------------------------------
+
+The intention here is to generate the C code with handlbars (https://handlebarsjs.com/) as the templating engine instead of freemarker.
+
+This is restricted to the STM32L5 example.
+In this example, two new folders named 
+* 'handlebars' : hosting the templates
+* 'handlebars_gen' : hosting the generated code  
+
+are added in the STM32L5 project (CMSIS-Zone\Examples\STM32L5\Zone).  
+We do not manage the blinky_s and blinky_ns subfolders.  
+We focus on the application project level.
+
+We also add a directory named 'tools' where we put a minimal codegen tool written in JavaScript.
+
+### Handlebars in a nutshell
+
+Handlebars uses a template and an input object to generate the text we want (C code in our case).   
+A Handlebars template is just some text that contains Handlebars expressions.  
+Once you have a template (basically a string, in our case coming from a template file), the next step is to compile that string into a Handlebars template function.   
+You can then render the template by passing a data object (also known as a context) into that function.
+
+Example:
+* our codegen template stored in mem_layout_template.h is loaded in *handlebars_template_string*  
+* our data (platform and user settings) stored in STM32L5.azone.json is loaded in *data_object*
+
+Handlebars invokation looks like :
+```
+template_function = handlebars.compile(handlebars_template_string)
+generated_code = template_function(data_object)
+```
+
+
+### Settings
+
+For the time being, we do not pay attention to the rzone.  
+We will convert STM32L5.azone from XML to JSON format because handlebars requires a Javascript Object as input object and JSON is supported natively by JavaScript (but XML could do the job as well).
+
+Also: as the developer needs to get oriented in the fields, I think JSON is far more convenient than XML.
+
+
+To do this conversion, we use an online tool: https://jsonformatter.org/xml-to-json
+
+Let's store the result in STM32L5.azone.json
+
+### Invoking the codegen
+
+The idea is to work from: CMSIS-Zone\Examples\STM32L5\Zone  
+
+Please refer to : CMSIS-Zone\Examples\STM32L5\Zone\tools\README.md  
+for installing all required packages.
+
+The templates are in the folder: *handlebars*  
+The generated code will be storedin the folder: *handlebars_gen* 
+
+The codegen is invoked this way:  
+
+```
+node ./tools/mini_codegen --template ./handlebars/mem_layout_template.h --data ./STM32L5.azone.json --output ./handlebars_gen/mem_layout.h
+```
+
+FIXME: At the moment, you need to invoke this command individually for each supported template.
