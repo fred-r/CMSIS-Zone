@@ -64,7 +64,7 @@ following steps:
 fred-r's tweaks to play around with Handlebars
 ----------------------------------------------
 
-The intention here is to generate the C code with handlbars (https://handlebarsjs.com/) as the templating engine instead of freemarker.
+The intention here is to generate the C code with handlebars (https://handlebarsjs.com/) as the templating engine instead of freemarker.
 
 This is restricted to the STM32L5 example.
 In this example, two new folders named 
