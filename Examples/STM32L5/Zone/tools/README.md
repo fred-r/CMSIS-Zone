@@ -21,6 +21,6 @@ npm install handlebars-helpers
 Calling the tool from : CMSIS-Zone\Examples\STM32L5\Zone  
 
 ```
-node ./tools/mini_codegen --template ./handlebars/mem_layout_template.h --data ./STM32L5.azone.json --output ./handlebars_gen/mem_layout.h
+node ./tools/mini_codegen --template ./handlebars/mem_layout_template.h --data ./STM32L5.fzone.json --output ./handlebars_gen/mem_layout.h
 ```
 

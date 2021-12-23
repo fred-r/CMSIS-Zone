@@ -19,7 +19,7 @@
  * This is some crappy code to invoke handlebars written by a C developer
  * We will not use object-oriented programming.
  * ---------------------------------------------------------------------- */
-const version = "0.0.1"
+const version = "0.0.2"
 
 /* ------- */
 /* MODULES */
@@ -33,7 +33,7 @@ const { hideBin } = require("yargs/helpers");
 let argv;  /* command line arguments */
 
 let codegen_template;  /* codegen template file (C code instrumented with Handlebars expressions) */
-let azone_data;        /* application configuration declared in the azone file */
+let fzone_data;        /* application configuration declared in the fzone file */
 let generated_file;    /* codegen output file */
 
 let fs = require("fs"); /* files operations */
@@ -78,14 +78,14 @@ function invokeCodegen() {
     try {
         handlebars_template_string = fs.readFileSync(codegen_template).toString();
       } catch (error) {
-        console.log(error);
+        console.log("[ERROR] " + error);
       }    
 
     /* Load the configuration data into a javascript object */
     try {
-        dictionary = fs.readFileSync(azone_data).toString();
+        dictionary = fs.readFileSync(fzone_data).toString();
       } catch (error) {
-        console.log(error);
+        console.log("[ERROR] " + error);
       }    
     data_object = JSON.parse(dictionary);
 
@@ -98,8 +98,9 @@ function invokeCodegen() {
     /* Generate the output file */
     try {
         fs.writeFileSync(generated_file, generated_code);
+        console.log("[INFO] Code generation completed successfully in: " + generated_file)
     } catch (error) {
-        console.log(error);
+        console.log("[ERROR] " + error);
     }
 }
 
@@ -123,11 +124,11 @@ function setGlobals() {
         process.exit();        
     }
 
-    /* azone settings  */
+    /* fzone settings  */
     if (argv.template) {
         if (fs.existsSync(argv.data)) {
-            azone_data = argv.data;
-            console.log("[INFO]: configuration settings taken from " + azone_data);
+            fzone_data = argv.data;
+            console.log("[INFO]: configuration settings taken from " + fzone_data);
         } else {
             console.log("[ERROR]: data file not found");
             process.exit();            
@@ -152,7 +153,7 @@ function setGlobals() {
 /**
  * Parse the command line arguments.
  * @param  {string} template The codegen template file to be processed.
- * @param  {string} data The azone.json file containing the data to be used with the codegen template.
+ * @param  {string} data The fzone.json file containing the data to be used with the codegen template.
  * @param  {string} output The resulting C file.
  * @return nothing
  */
@@ -173,11 +174,11 @@ function commandLineHandler() {
  * @return nothing
  */
 function main() {
-    console.log("mini_codegen version: " + version);
+    console.log("[INFO] mini_codegen - START OF PROCESSING (version: " + version+ ")");
     commandLineHandler();
     setGlobals();
     invokeCodegen();
-    console.log("mini_codegen - END OF PROCESSING");
+    console.log("[INFO] mini_codegen - END OF PROCESSING");
 }
 
 /* Let's get started ... */

@@ -1,0 +1,5577 @@
+{
+    "fzone": {
+      "system": {
+        "processor": {
+          "Pname": "Cortex-M33",
+          "DnumInterrupts": "128",
+          "DnumSauRegions": "8"
+        },
+        "memory": [
+          {
+            "access": {
+              "p": "0",
+              "r": "1",
+              "w": "0",
+              "x": "1"
+            },
+            "dma": "0",
+            "external": "0",
+            "name": "Flash_NS",
+            "physical": "0x08000000",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "1",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x00080000",
+            "start": "0x08000000",
+            "startup": "0",
+            "type": "ROM",
+            "uninit": "0"
+          },
+          {
+            "access": {
+              "p": "0",
+              "r": "1",
+              "w": "0",
+              "x": "1"
+            },
+            "dma": "0",
+            "external": "0",
+            "info": "Non-secure FLASH for CODE execution",
+            "name": "CODE_NS",
+            "parent": "Flash_NS",
+            "physical": "0x08040000",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "1",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x40000",
+            "start": "0x08040000",
+            "startup": "0",
+            "type": "ROM",
+            "uninit": "0"
+          },
+          {
+            "access": {
+              "p": "0",
+              "r": "1",
+              "w": "0",
+              "x": "1"
+            },
+            "dma": "0",
+            "external": "0",
+            "name": "Flash_S",
+            "physical": "0x08000000",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "1"
+            },
+            "shared": "0",
+            "size": "0x00080000",
+            "start": "0x0C000000",
+            "startup": "0",
+            "type": "ROM",
+            "uninit": "0"
+          },
+          {
+            "access": {
+              "p": "0",
+              "r": "1",
+              "w": "0",
+              "x": "1"
+            },
+            "dma": "0",
+            "external": "0",
+            "fixed": "1",
+            "info": "Secure FLASH for CODE execution",
+            "name": "CODE_S",
+            "parent": "Flash_S",
+            "physical": "0x08000000",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "1",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x3E000",
+            "start": "0x0C000000",
+            "startup": "0",
+            "type": "ROM",
+            "uninit": "0"
+          },
+          {
+            "access": {
+              "p": "0",
+              "r": "1",
+              "w": "0",
+              "x": "1"
+            },
+            "dma": "0",
+            "external": "0",
+            "fixed": "1",
+            "info": "Secure FLASH for CODE Veneer table",
+            "name": "Veneer",
+            "parent": "Flash_S",
+            "physical": "0x0803E000",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "1"
+            },
+            "shared": "0",
+            "size": "0x2000",
+            "start": "0x0C03E000",
+            "startup": "0",
+            "type": "ROM",
+            "uninit": "0"
+          },
+          {
+            "access": {
+              "p": "0",
+              "r": "1",
+              "w": "1",
+              "x": "1"
+            },
+            "dma": "0",
+            "external": "0",
+            "name": "SRAM_NS",
+            "physical": "0x20000000",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "1",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x00040000",
+            "start": "0x20000000",
+            "startup": "0",
+            "type": "RAM",
+            "uninit": "0"
+          },
+          {
+            "access": {
+              "p": "0",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "info": "Non-secure RAM for DATA section",
+            "name": "DATA_NS",
+            "parent": "SRAM_NS",
+            "physical": "0x20000000",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "1",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x20000",
+            "start": "0x20000000",
+            "startup": "0",
+            "type": "RAM",
+            "uninit": "0"
+          },
+          {
+            "access": {
+              "p": "0",
+              "r": "1",
+              "w": "1",
+              "x": "1"
+            },
+            "dma": "0",
+            "external": "0",
+            "name": "SRAM_S",
+            "physical": "0x20000000",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "1"
+            },
+            "shared": "0",
+            "size": "0x00040000",
+            "start": "0x30000000",
+            "startup": "0",
+            "type": "RAM",
+            "uninit": "0"
+          },
+          {
+            "access": {
+              "p": "0",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "info": "Secure RAM for DATA section",
+            "name": "DATA_S",
+            "parent": "SRAM_S",
+            "physical": "0x20020000",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "1",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x20000",
+            "start": "0x30020000",
+            "startup": "0",
+            "type": "RAM",
+            "uninit": "0"
+          }
+        ],
+        "mpc_setup": [
+          {
+            "blk_size": "0x100",
+            "info": "SRAM1",
+            "name": "GTZC_MPCBB1_S",
+            "size": "0x00030000",
+            "start": "0x20000000",
+            "type": "s",
+            "S_bit": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "bit_comment": [
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_NS",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S"
+            ]
+          },
+          {
+            "blk_size": "0x100",
+            "info": "SRAM2",
+            "name": "GTZC_MPCBB2_S",
+            "size": "0x00010000",
+            "start": "0x20030000",
+            "type": "s",
+            "S_bit": [
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "bit_comment": [
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S",
+              "memory:DATA_S"
+            ]
+          }
+        ],
+        "sau": [
+          {
+            "end": "0x0807FFFF",
+            "info": "memory:CODE_NS",
+            "nsc": "0",
+            "start": "0x08040000"
+          },
+          {
+            "end": "0x0C03FFFF",
+            "info": "memory:Veneer",
+            "nsc": "1",
+            "start": "0x0C03E000"
+          },
+          {
+            "end": "0x2001FFFF",
+            "info": "memory:DATA_NS",
+            "nsc": "0",
+            "start": "0x20000000"
+          },
+          {
+            "end": "0x4FFFFFFF",
+            "info": "region",
+            "nsc": "0",
+            "start": "0x40000000"
+          }
+        ],
+        "peripheral": [
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "ADC",
+            "info": "Analog-to-Digital Converter",
+            "name": "ADC",
+            "physical": "0x42028000",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "1",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x42028000",
+            "uninit": "0",
+            "interrupt": {
+              "info": "ADC1_2 global interrupt",
+              "irqn": "037",
+              "name": "ADC1_2",
+              "security": {
+                "s": "0",
+                "n": "1",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "ADC",
+            "info": "Comparator",
+            "name": "COMP",
+            "physical": "0x40010200",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x200",
+            "start": "0x40010200",
+            "uninit": "0",
+            "interrupt": {
+              "info": "COMP1 and COMP2 interrupts",
+              "irqn": "072",
+              "name": "COMP",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "ADC",
+            "info": "Digital filter for sigma delta modulators",
+            "name": "DFSDM1",
+            "physical": "0x40016000",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x800",
+            "start": "0x40016000",
+            "uninit": "0",
+            "interrupt": [
+              {
+                "info": "DFSDM1_FLT0 global interrupt",
+                "irqn": "102",
+                "name": "DFSDM1_FLT0",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "DFSDM1_FLT1 global interrupt",
+                "irqn": "103",
+                "name": "DFSDM1_FLT1",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "DFSDM1_FLT2 global interrupt",
+                "irqn": "104",
+                "name": "DFSDM1_FLT2",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "DFSDM1_FLT3 global interrupt",
+                "irqn": "105",
+                "name": "DFSDM1_FLT3",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              }
+            ]
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "DMA",
+            "info": "DMA1 Controller 1",
+            "name": "DMA1",
+            "physical": "0x40020000",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "1",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "slot_name": "Channels",
+            "slot_type": "sp",
+            "start": "0x50020000",
+            "uninit": "0",
+            "interrupt": [
+              {
+                "info": "DMA1 Channel 1 global interrupt",
+                "irqn": "029",
+                "name": "DMA1_Channel1",
+                "security": {
+                  "s": "1",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "DMA1 Channel 2 global interrupt",
+                "irqn": "030",
+                "name": "DMA1_Channel2",
+                "security": {
+                  "s": "1",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "DMA1 Channel 3 interrupt",
+                "irqn": "031",
+                "name": "DMA1_Channel3",
+                "security": {
+                  "s": "1",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "DMA1 Channel 4 interrupt",
+                "irqn": "032",
+                "name": "DMA1_Channel4",
+                "security": {
+                  "s": "1",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "DMA1 Channel 5 interrupt",
+                "irqn": "033",
+                "name": "DMA1_Channel5",
+                "security": {
+                  "s": "1",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "DMA1 Channel 6 interrupt",
+                "irqn": "034",
+                "name": "DMA1_Channel6",
+                "security": {
+                  "s": "1",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "DMA1 Channel 7 interrupt",
+                "irqn": "035",
+                "name": "DMA1_Channel7",
+                "security": {
+                  "s": "1",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "DMA1_Channel 8",
+                "irqn": "036",
+                "name": "DMA1_Channel8",
+                "security": {
+                  "s": "1",
+                  "n": "0",
+                  "c": "0"
+                }
+              }
+            ]
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "DMA",
+            "info": "DMA2 Controller 1",
+            "name": "DMA2",
+            "physical": "0x40020400",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "slot_name": "Channels",
+            "slot_type": "sp",
+            "start": "0x40020400",
+            "uninit": "0",
+            "interrupt": [
+              {
+                "info": "DMA2_CH1",
+                "irqn": "080",
+                "name": "DMA2_CH1",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "DMA2_CH2",
+                "irqn": "081",
+                "name": "DMA2_CH2",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "DMA2_CH3",
+                "irqn": "082",
+                "name": "DMA2_CH3",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "DMA2_CH4",
+                "irqn": "083",
+                "name": "DMA2_CH4",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "DMA2_CH5",
+                "irqn": "084",
+                "name": "DMA2_CH5",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "DMA2_CH6",
+                "irqn": "085",
+                "name": "DMA2_CH6",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "DMA2_CH7",
+                "irqn": "086",
+                "name": "DMA2_CH7",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "DMA2_CH8",
+                "irqn": "087",
+                "name": "DMA2_CH8",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              }
+            ]
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "info": "CAN / CAN FD",
+            "name": "FDCAN1",
+            "physical": "0x4000A400",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0xC00",
+            "start": "0x4000A400",
+            "uninit": "0",
+            "interrupt": [
+              {
+                "info": "FDCAN1 Interrupt 0",
+                "irqn": "039",
+                "name": "FDCAN1_IT0",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "FDCAN1 Interrupt 1",
+                "irqn": "040",
+                "name": "FDCAN1_IT1",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              }
+            ]
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "GPIO",
+            "info": "Port A",
+            "name": "GPIOA",
+            "physical": "0x42020000",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "1",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "slot_name": "Pins",
+            "slot_type": "s",
+            "start": "0x52020000",
+            "uninit": "0"
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "GPIO",
+            "info": "Port B",
+            "name": "GPIOB",
+            "physical": "0x42020400",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "1",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "slot_name": "Pins",
+            "slot_type": "s",
+            "start": "0x42020400",
+            "uninit": "0"
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "GPIO",
+            "info": "Port C",
+            "name": "GPIOC",
+            "physical": "0x42020800",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "slot_name": "Pins",
+            "slot_type": "s",
+            "start": "0x42020800",
+            "uninit": "0"
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "GPIO",
+            "info": "Port D",
+            "name": "GPIOD",
+            "physical": "0x42020C00",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "slot_name": "Pins",
+            "slot_type": "s",
+            "start": "0x42020C00",
+            "uninit": "0"
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "GPIO",
+            "info": "Port E",
+            "name": "GPIOE",
+            "physical": "0x42021000",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "slot_name": "Pins",
+            "slot_type": "s",
+            "start": "0x42021000",
+            "uninit": "0"
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "GPIO",
+            "info": "Port F",
+            "name": "GPIOF",
+            "physical": "0x42021400",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "slot_name": "Pins",
+            "slot_type": "s",
+            "start": "0x42021400",
+            "uninit": "0"
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "GPIO",
+            "info": "Port G",
+            "name": "GPIOG",
+            "physical": "0x42021800",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "slot_name": "Pins",
+            "slot_type": "s",
+            "start": "0x42021800",
+            "uninit": "0"
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "GPIO",
+            "info": "Port H",
+            "name": "GPIOH",
+            "physical": "0x42021C00",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "slot_name": "Pins",
+            "slot_type": "s",
+            "start": "0x42021C00",
+            "uninit": "0"
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "I2C",
+            "info": "Inter-integrated circuit",
+            "name": "I2C1",
+            "physical": "0x40005400",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40005400",
+            "uninit": "0",
+            "interrupt": [
+              {
+                "info": "I2C1 error interrupt",
+                "irqn": "056",
+                "name": "I2C1_ER",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "I2C1 event interrupt",
+                "irqn": "055",
+                "name": "I2C1_EV",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              }
+            ]
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "I2C",
+            "name": "I2C2",
+            "physical": "0x40005800",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40005800",
+            "uninit": "0",
+            "interrupt": [
+              {
+                "info": "I2C2 error interrupt",
+                "irqn": "058",
+                "name": "I2C2_ER",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "I2C2 event interrupt",
+                "irqn": "057",
+                "name": "I2C2_EV",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              }
+            ]
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "I2C",
+            "name": "I2C3",
+            "physical": "0x40005C00",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40005C00",
+            "uninit": "0",
+            "interrupt": [
+              {
+                "info": "I2C3 error interrupt",
+                "irqn": "089",
+                "name": "I2C3_ER",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "I2C3 event interrupt",
+                "irqn": "088",
+                "name": "I2C3_EV",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              }
+            ]
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "I2C",
+            "name": "I2C4",
+            "physical": "0x40008400",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40008400",
+            "uninit": "0",
+            "interrupt": [
+              {
+                "info": "I2C4 error interrupt",
+                "irqn": "100",
+                "name": "I2C4_ER",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "I2C4 event interrupt",
+                "irqn": "101",
+                "name": "I2C4_EV",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              }
+            ]
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "LPTIM",
+            "info": "Low power timer",
+            "name": "LPTIM1",
+            "physical": "0x40007C00",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40007C00",
+            "uninit": "0",
+            "interrupt": {
+              "info": "LP TIM1 interrupt",
+              "irqn": "067",
+              "name": "LPTIM1",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "LPTIM",
+            "name": "LPTIM3",
+            "physical": "0x40009400",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40009400",
+            "uninit": "0",
+            "interrupt": {
+              "info": "LP TIM2 interrupt",
+              "irqn": "068",
+              "name": "LPTIM2",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "OctoSPI",
+            "info": "OctoSPI",
+            "name": "OCTOSPI1",
+            "physical": "0x44021000",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x44021000",
+            "uninit": "0",
+            "interrupt": {
+              "info": "OCTOSPI1 global interrupt",
+              "irqn": "076",
+              "name": "OCTOSPI1",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "SAI",
+            "info": "Serial audio interface 1",
+            "name": "SAI1",
+            "physical": "0x40015400",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40015400",
+            "uninit": "0",
+            "interrupt": {
+              "info": "SAI1 global interrupt",
+              "irqn": "090",
+              "name": "SAI1",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "SAI",
+            "info": "Serial audio interface 2",
+            "name": "SAI2",
+            "physical": "0x40015800",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40015800",
+            "uninit": "0",
+            "interrupt": {
+              "info": "SAI2 global interrupt",
+              "irqn": "091",
+              "name": "SAI2",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "SPI",
+            "info": "Serial peripheral interface",
+            "name": "SPI1",
+            "physical": "0x40013000",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40013000",
+            "uninit": "0",
+            "interrupt": {
+              "info": "SPI1 global interrupt",
+              "irqn": "059",
+              "name": "SPI1",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "SPI",
+            "name": "SPI2",
+            "physical": "0x40003800",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40003800",
+            "uninit": "0",
+            "interrupt": {
+              "info": "SPI2 global interrupt",
+              "irqn": "060",
+              "name": "SPI2",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "SPI",
+            "name": "SPI3",
+            "physical": "0x40003C00",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40003C00",
+            "uninit": "0",
+            "interrupt": {
+              "info": "SPI3",
+              "irqn": "099",
+              "name": "SPI3",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "TIM",
+            "info": "Advanced-timers",
+            "name": "TIM1",
+            "physical": "0x40012C00",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "1",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x50012C00",
+            "uninit": "0",
+            "interrupt": [
+              {
+                "info": "TIM1 Break",
+                "irqn": "041",
+                "name": "TIM1_BRK",
+                "security": {
+                  "s": "1",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "TIM1 Capture Compare interrupt",
+                "irqn": "044",
+                "name": "TIM1_CC",
+                "security": {
+                  "s": "1",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "TIM1 Trigger and Commutation",
+                "irqn": "043",
+                "name": "TIM1_TRG_COM",
+                "security": {
+                  "s": "1",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "TIM1 Update",
+                "irqn": "042",
+                "name": "TIM1_UP",
+                "security": {
+                  "s": "1",
+                  "n": "0",
+                  "c": "0"
+                }
+              }
+            ]
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "TIM",
+            "info": "General purpose timers",
+            "name": "TIM15",
+            "physical": "0x40014000",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40014000",
+            "uninit": "0",
+            "interrupt": {
+              "info": "TIM15 global interrupt",
+              "irqn": "069",
+              "name": "TIM15",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "TIM",
+            "info": "General purpose timers",
+            "name": "TIM16",
+            "physical": "0x40014400",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40014400",
+            "uninit": "0",
+            "interrupt": {
+              "info": "TIM16 global interrupt",
+              "irqn": "070",
+              "name": "TIM16",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "TIM",
+            "info": "General purpose timers",
+            "name": "TIM17",
+            "physical": "0x40014800",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40014800",
+            "uninit": "0",
+            "interrupt": {
+              "info": "TIM17 global interrupt",
+              "irqn": "071",
+              "name": "TIM17",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "TIM",
+            "info": "General-purpose-timers",
+            "name": "TIM2",
+            "physical": "0x40000000",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40000000",
+            "uninit": "0",
+            "interrupt": {
+              "info": "TIM2 global interrupt",
+              "irqn": "045",
+              "name": "TIM2",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "TIM",
+            "info": "General-purpose-timers",
+            "name": "TIM3",
+            "physical": "0x40000400",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40000400",
+            "uninit": "0",
+            "interrupt": {
+              "info": "TIM3 global interrupt",
+              "irqn": "046",
+              "name": "TIM3",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "TIM",
+            "info": "General-purpose-timers",
+            "name": "TIM4",
+            "physical": "0x40000800",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "1",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40000800",
+            "uninit": "0",
+            "interrupt": {
+              "info": "TIM4 global interrupt",
+              "irqn": "047",
+              "name": "TIM4",
+              "security": {
+                "s": "0",
+                "n": "1",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "TIM",
+            "name": "TIM5",
+            "physical": "0x40000C00",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40000C00",
+            "uninit": "0",
+            "interrupt": {
+              "info": "TIM5 global interrupt",
+              "irqn": "048",
+              "name": "TIM5",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "TIM",
+            "name": "TIM6",
+            "physical": "0x40001000",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40001000",
+            "uninit": "0",
+            "interrupt": {
+              "info": "TIM6 global interrupt",
+              "irqn": "049",
+              "name": "TIM6",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "TIM",
+            "name": "TIM7",
+            "physical": "0x40001400",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40001400",
+            "uninit": "0",
+            "interrupt": {
+              "info": "TIM7 global interrupt",
+              "irqn": "050",
+              "name": "TIM7",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "TIM",
+            "info": "Advanced-timers",
+            "name": "TIM8",
+            "physical": "0x40013400",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40013400",
+            "uninit": "0",
+            "interrupt": [
+              {
+                "info": "TIM8 Break Interrupt",
+                "irqn": "051",
+                "name": "TIM8_BRK",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "TIM8 Capture Compare Interrupt",
+                "irqn": "054",
+                "name": "TIM8_CC",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "TIM8 Trigger and Commutation Interrupt",
+                "irqn": "053",
+                "name": "TIM8_TRG_COM",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              },
+              {
+                "info": "TIM8 Update Interrupt",
+                "irqn": "052",
+                "name": "TIM8_UP",
+                "security": {
+                  "s": "0",
+                  "n": "0",
+                  "c": "0"
+                }
+              }
+            ]
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "UCPD",
+            "info": "USB Power Delivery interface",
+            "name": "UCPD1",
+            "physical": "0x4000DC00",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x4000DC00",
+            "uninit": "0",
+            "interrupt": {
+              "info": "UCPD global interrupt",
+              "irqn": "106",
+              "name": "UCPD1",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "USART",
+            "info": "Universal synchronous asynchronous receiver transmitter",
+            "name": "LPUART1",
+            "physical": "0x40008000",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40008000",
+            "uninit": "0",
+            "interrupt": {
+              "info": "LPUART1 global interrupt",
+              "irqn": "066",
+              "name": "LPUART1",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "USART",
+            "name": "UART4",
+            "physical": "0x40004C00",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40004C00",
+            "uninit": "0",
+            "interrupt": {
+              "info": "UART4 global interrupt",
+              "irqn": "064",
+              "name": "UART4",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "USART",
+            "name": "UART5",
+            "physical": "0x40005000",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40005000",
+            "uninit": "0",
+            "interrupt": {
+              "info": "UART5 global interrupt",
+              "irqn": "065",
+              "name": "UART5",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "USART",
+            "info": "Universal synchronous asynchronous receiver transmitter",
+            "name": "USART1",
+            "physical": "0x40013800",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "1",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x50013800",
+            "uninit": "0",
+            "interrupt": {
+              "info": "USART1 global interrupt",
+              "irqn": "061",
+              "name": "USART1",
+              "security": {
+                "s": "1",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "USART",
+            "name": "USART2",
+            "physical": "0x40004400",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "1",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40004400",
+            "uninit": "0",
+            "interrupt": {
+              "info": "USART2 global interrupt",
+              "irqn": "062",
+              "name": "USART2",
+              "security": {
+                "s": "0",
+                "n": "1",
+                "c": "0"
+              }
+            }
+          },
+          {
+            "access": {
+              "p": "1",
+              "r": "1",
+              "w": "1",
+              "x": "0"
+            },
+            "dma": "0",
+            "external": "0",
+            "group": "USART",
+            "name": "USART3",
+            "physical": "0x40004800",
+            "privilege": {
+              "p": "0",
+              "u": "0"
+            },
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            },
+            "shared": "0",
+            "size": "0x400",
+            "start": "0x40004800",
+            "uninit": "0",
+            "interrupt": {
+              "info": "USART3 global interrupt",
+              "irqn": "063",
+              "name": "USART3",
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "0"
+              }
+            }
+          }
+        ],
+        "interrupt": [
+          {
+            "info": "DMA1 Channel 1 global interrupt",
+            "irqn": "029",
+            "name": "DMA1_Channel1",
+            "security": {
+              "s": "1",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "DMA1 Channel 2 global interrupt",
+            "irqn": "030",
+            "name": "DMA1_Channel2",
+            "security": {
+              "s": "1",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "DMA1 Channel 3 interrupt",
+            "irqn": "031",
+            "name": "DMA1_Channel3",
+            "security": {
+              "s": "1",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "DMA1 Channel 4 interrupt",
+            "irqn": "032",
+            "name": "DMA1_Channel4",
+            "security": {
+              "s": "1",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "DMA1 Channel 5 interrupt",
+            "irqn": "033",
+            "name": "DMA1_Channel5",
+            "security": {
+              "s": "1",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "DMA1 Channel 6 interrupt",
+            "irqn": "034",
+            "name": "DMA1_Channel6",
+            "security": {
+              "s": "1",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "DMA1 Channel 7 interrupt",
+            "irqn": "035",
+            "name": "DMA1_Channel7",
+            "security": {
+              "s": "1",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "DMA1_Channel 8",
+            "irqn": "036",
+            "name": "DMA1_Channel8",
+            "security": {
+              "s": "1",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "ADC1_2 global interrupt",
+            "irqn": "037",
+            "name": "ADC1_2",
+            "security": {
+              "s": "0",
+              "n": "1",
+              "c": "0"
+            }
+          },
+          {
+            "info": "FDCAN1 Interrupt 0",
+            "irqn": "039",
+            "name": "FDCAN1_IT0",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "FDCAN1 Interrupt 1",
+            "irqn": "040",
+            "name": "FDCAN1_IT1",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "TIM1 Break",
+            "irqn": "041",
+            "name": "TIM1_BRK",
+            "security": {
+              "s": "1",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "TIM1 Update",
+            "irqn": "042",
+            "name": "TIM1_UP",
+            "security": {
+              "s": "1",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "TIM1 Trigger and Commutation",
+            "irqn": "043",
+            "name": "TIM1_TRG_COM",
+            "security": {
+              "s": "1",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "TIM1 Capture Compare interrupt",
+            "irqn": "044",
+            "name": "TIM1_CC",
+            "security": {
+              "s": "1",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "TIM2 global interrupt",
+            "irqn": "045",
+            "name": "TIM2",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "TIM3 global interrupt",
+            "irqn": "046",
+            "name": "TIM3",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "TIM4 global interrupt",
+            "irqn": "047",
+            "name": "TIM4",
+            "security": {
+              "s": "0",
+              "n": "1",
+              "c": "0"
+            }
+          },
+          {
+            "info": "TIM5 global interrupt",
+            "irqn": "048",
+            "name": "TIM5",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "TIM6 global interrupt",
+            "irqn": "049",
+            "name": "TIM6",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "TIM7 global interrupt",
+            "irqn": "050",
+            "name": "TIM7",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "TIM8 Break Interrupt",
+            "irqn": "051",
+            "name": "TIM8_BRK",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "TIM8 Update Interrupt",
+            "irqn": "052",
+            "name": "TIM8_UP",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "TIM8 Trigger and Commutation Interrupt",
+            "irqn": "053",
+            "name": "TIM8_TRG_COM",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "TIM8 Capture Compare Interrupt",
+            "irqn": "054",
+            "name": "TIM8_CC",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "I2C1 event interrupt",
+            "irqn": "055",
+            "name": "I2C1_EV",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "I2C1 error interrupt",
+            "irqn": "056",
+            "name": "I2C1_ER",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "I2C2 event interrupt",
+            "irqn": "057",
+            "name": "I2C2_EV",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "I2C2 error interrupt",
+            "irqn": "058",
+            "name": "I2C2_ER",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "SPI1 global interrupt",
+            "irqn": "059",
+            "name": "SPI1",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "SPI2 global interrupt",
+            "irqn": "060",
+            "name": "SPI2",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "USART1 global interrupt",
+            "irqn": "061",
+            "name": "USART1",
+            "security": {
+              "s": "1",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "USART2 global interrupt",
+            "irqn": "062",
+            "name": "USART2",
+            "security": {
+              "s": "0",
+              "n": "1",
+              "c": "0"
+            }
+          },
+          {
+            "info": "USART3 global interrupt",
+            "irqn": "063",
+            "name": "USART3",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "UART4 global interrupt",
+            "irqn": "064",
+            "name": "UART4",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "UART5 global interrupt",
+            "irqn": "065",
+            "name": "UART5",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "LPUART1 global interrupt",
+            "irqn": "066",
+            "name": "LPUART1",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "LP TIM1 interrupt",
+            "irqn": "067",
+            "name": "LPTIM1",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "LP TIM2 interrupt",
+            "irqn": "068",
+            "name": "LPTIM2",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "TIM15 global interrupt",
+            "irqn": "069",
+            "name": "TIM15",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "TIM16 global interrupt",
+            "irqn": "070",
+            "name": "TIM16",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "TIM17 global interrupt",
+            "irqn": "071",
+            "name": "TIM17",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "COMP1 and COMP2 interrupts",
+            "irqn": "072",
+            "name": "COMP",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "OCTOSPI1 global interrupt",
+            "irqn": "076",
+            "name": "OCTOSPI1",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "DMA2_CH1",
+            "irqn": "080",
+            "name": "DMA2_CH1",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "DMA2_CH2",
+            "irqn": "081",
+            "name": "DMA2_CH2",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "DMA2_CH3",
+            "irqn": "082",
+            "name": "DMA2_CH3",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "DMA2_CH4",
+            "irqn": "083",
+            "name": "DMA2_CH4",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "DMA2_CH5",
+            "irqn": "084",
+            "name": "DMA2_CH5",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "DMA2_CH6",
+            "irqn": "085",
+            "name": "DMA2_CH6",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "DMA2_CH7",
+            "irqn": "086",
+            "name": "DMA2_CH7",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "DMA2_CH8",
+            "irqn": "087",
+            "name": "DMA2_CH8",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "I2C3 event interrupt",
+            "irqn": "088",
+            "name": "I2C3_EV",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "I2C3 error interrupt",
+            "irqn": "089",
+            "name": "I2C3_ER",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "SAI1 global interrupt",
+            "irqn": "090",
+            "name": "SAI1",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "SAI2 global interrupt",
+            "irqn": "091",
+            "name": "SAI2",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "SPI3",
+            "irqn": "099",
+            "name": "SPI3",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "I2C4 error interrupt",
+            "irqn": "100",
+            "name": "I2C4_ER",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "I2C4 event interrupt",
+            "irqn": "101",
+            "name": "I2C4_EV",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "DFSDM1_FLT0 global interrupt",
+            "irqn": "102",
+            "name": "DFSDM1_FLT0",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "DFSDM1_FLT1 global interrupt",
+            "irqn": "103",
+            "name": "DFSDM1_FLT1",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "DFSDM1_FLT2 global interrupt",
+            "irqn": "104",
+            "name": "DFSDM1_FLT2",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "DFSDM1_FLT3 global interrupt",
+            "irqn": "105",
+            "name": "DFSDM1_FLT3",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          },
+          {
+            "info": "UCPD global interrupt",
+            "irqn": "106",
+            "name": "UCPD1",
+            "security": {
+              "s": "0",
+              "n": "0",
+              "c": "0"
+            }
+          }
+        ],
+        "reg_setup": [
+          {
+            "name": "DMA1_Channel1_S->CCR",
+            "index": "",
+            "peripheral": [
+              "DMA1",
+              "DMA1"
+            ],
+            "slot": [
+              "Channel 1",
+              "Channel 1"
+            ],
+            "value": [
+              "0x00020000",
+              "0x00100000"
+            ]
+          },
+          {
+            "name": "DMA1_Channel2_S->CCR",
+            "index": "",
+            "peripheral": "DMA1",
+            "slot": "Channel 2",
+            "value": "0x00020000"
+          },
+          {
+            "name": "DMA1_Channel3_S->CCR",
+            "index": "",
+            "peripheral": "DMA1",
+            "slot": "Channel 3",
+            "value": "0x00020000"
+          },
+          {
+            "name": "DMA1_Channel4_S->CCR",
+            "index": "",
+            "peripheral": "DMA1",
+            "slot": "Channel 4",
+            "value": "0x00020000"
+          },
+          {
+            "name": "DMA1_Channel5_S->CCR",
+            "index": "",
+            "peripheral": "DMA1",
+            "slot": "Channel 5",
+            "value": "0x00020000"
+          },
+          {
+            "name": "DMA1_Channel6_S->CCR",
+            "index": "",
+            "peripheral": "DMA1",
+            "slot": "Channel 6",
+            "value": "0x00020000"
+          },
+          {
+            "name": "DMA1_Channel7_S->CCR",
+            "index": "",
+            "peripheral": "DMA1",
+            "slot": "Channel 7",
+            "value": "0x00020000"
+          },
+          {
+            "name": "DMA1_Channel8_S->CCR",
+            "index": "",
+            "peripheral": "DMA1",
+            "slot": "Channel 8",
+            "value": "0x00020000"
+          },
+          {
+            "name": "GPIOA_S->SECCFGR",
+            "index": "",
+            "peripheral": [
+              "GPIOA",
+              "GPIOA",
+              "GPIOA",
+              "GPIOA",
+              "GPIOA",
+              "GPIOA",
+              "GPIOA",
+              "GPIOA",
+              "GPIOA",
+              "GPIOA",
+              "GPIOA",
+              "GPIOA",
+              "GPIOA",
+              "GPIOA",
+              "GPIOA"
+            ],
+            "slot": [
+              "Pin 1",
+              "Pin 2",
+              "Pin 3",
+              "Pin 4",
+              "Pin 5",
+              "Pin 6",
+              "Pin 7",
+              "Pin 8",
+              "Pin 9",
+              "Pin 10",
+              "Pin 11",
+              "Pin 12",
+              "Pin 13",
+              "Pin 14",
+              "Pin 15"
+            ],
+            "value": [
+              "0x00000002",
+              "0x00000004",
+              "0x00000008",
+              "0x00000010",
+              "0x00000020",
+              "0x00000040",
+              "0x00000080",
+              "0x00000100",
+              "0x00000200",
+              "0x00000400",
+              "0x00000800",
+              "0x00001000",
+              "0x00002000",
+              "0x00004000",
+              "0x00008000"
+            ]
+          },
+          {
+            "name": "GPIOB_S->SECCFGR",
+            "index": "",
+            "peripheral": [
+              "GPIOB",
+              "GPIOB"
+            ],
+            "slot": [
+              "Pin 0",
+              "Pin 1"
+            ],
+            "value": [
+              "0x00000001",
+              "0x00000002"
+            ]
+          },
+          {
+            "name": "GTZC_TZSC->SECCFGR1",
+            "index": "",
+            "peripheral": "TIM1",
+            "slot": "",
+            "value": "0x40000000"
+          },
+          {
+            "name": "GTZC_TZSC->SECCFGR2",
+            "index": "",
+            "peripheral": "USART1",
+            "slot": "",
+            "value": "0x00000002"
+          }
+        ]
+      },
+      "zone": [
+        {
+          "Dname": "STM32L552ZETxQ",
+          "Pname": "",
+          "info": "",
+          "name": "blinky_s",
+          "security": {
+            "s": "1",
+            "n": "0",
+            "c": "0"
+          },
+          "memory": [
+            {
+              "access": {
+                "p": "0",
+                "r": "1",
+                "w": "0",
+                "x": "1"
+              },
+              "dma": "0",
+              "external": "0",
+              "info": "Secure FLASH for CODE execution",
+              "name": "CODE_S",
+              "physical": "0x08000000",
+              "privilege": {
+                "p": "0",
+                "u": "0"
+              },
+              "security": {
+                "s": "1",
+                "n": "0",
+                "c": "0"
+              },
+              "shared": "0",
+              "size": "0x3E000",
+              "start": "0x0C000000",
+              "startup": "0",
+              "type": "ROM",
+              "uninit": "0"
+            },
+            {
+              "access": {
+                "p": "0",
+                "r": "1",
+                "w": "0",
+                "x": "1"
+              },
+              "dma": "0",
+              "external": "0",
+              "info": "Secure FLASH for CODE Veneer table",
+              "name": "Veneer",
+              "physical": "0x0803E000",
+              "privilege": {
+                "p": "0",
+                "u": "0"
+              },
+              "security": {
+                "s": "0",
+                "n": "0",
+                "c": "1"
+              },
+              "shared": "0",
+              "size": "0x2000",
+              "start": "0x0C03E000",
+              "startup": "0",
+              "type": "ROM",
+              "uninit": "0"
+            },
+            {
+              "access": {
+                "p": "0",
+                "r": "1",
+                "w": "1",
+                "x": "0"
+              },
+              "dma": "0",
+              "external": "0",
+              "info": "Secure RAM for DATA section",
+              "name": "DATA_S",
+              "physical": "0x20020000",
+              "privilege": {
+                "p": "0",
+                "u": "0"
+              },
+              "security": {
+                "s": "1",
+                "n": "0",
+                "c": "0"
+              },
+              "shared": "0",
+              "size": "0x20000",
+              "start": "0x30020000",
+              "startup": "0",
+              "type": "RAM",
+              "uninit": "0"
+            }
+          ],
+          "peripheral": [
+            {
+              "access": {
+                "p": "1",
+                "r": "1",
+                "w": "1",
+                "x": "0"
+              },
+              "dma": "0",
+              "external": "0",
+              "group": "USART",
+              "info": "Universal synchronous asynchronous receiver transmitter",
+              "name": "USART1",
+              "physical": "0x40013800",
+              "privilege": {
+                "p": "0",
+                "u": "0"
+              },
+              "security": {
+                "s": "1",
+                "n": "0",
+                "c": "0"
+              },
+              "shared": "0",
+              "size": "0x400",
+              "start": "0x50013800",
+              "uninit": "0",
+              "interrupt": {
+                "info": "USART1 global interrupt",
+                "irqn": "061",
+                "name": "USART1",
+                "security": {
+                  "s": "1",
+                  "n": "0",
+                  "c": "0"
+                }
+              }
+            },
+            {
+              "access": {
+                "p": "1",
+                "r": "1",
+                "w": "1",
+                "x": "0"
+              },
+              "dma": "0",
+              "external": "0",
+              "group": "TIM",
+              "info": "Advanced-timers",
+              "name": "TIM1",
+              "physical": "0x40012C00",
+              "privilege": {
+                "p": "0",
+                "u": "0"
+              },
+              "security": {
+                "s": "1",
+                "n": "0",
+                "c": "0"
+              },
+              "shared": "0",
+              "size": "0x400",
+              "start": "0x50012C00",
+              "uninit": "0",
+              "interrupt": [
+                {
+                  "info": "TIM1 Break",
+                  "irqn": "041",
+                  "name": "TIM1_BRK",
+                  "security": {
+                    "s": "1",
+                    "n": "0",
+                    "c": "0"
+                  }
+                },
+                {
+                  "info": "TIM1 Capture Compare interrupt",
+                  "irqn": "044",
+                  "name": "TIM1_CC",
+                  "security": {
+                    "s": "1",
+                    "n": "0",
+                    "c": "0"
+                  }
+                },
+                {
+                  "info": "TIM1 Trigger and Commutation",
+                  "irqn": "043",
+                  "name": "TIM1_TRG_COM",
+                  "security": {
+                    "s": "1",
+                    "n": "0",
+                    "c": "0"
+                  }
+                },
+                {
+                  "info": "TIM1 Update",
+                  "irqn": "042",
+                  "name": "TIM1_UP",
+                  "security": {
+                    "s": "1",
+                    "n": "0",
+                    "c": "0"
+                  }
+                }
+              ]
+            },
+            {
+              "access": {
+                "p": "1",
+                "r": "1",
+                "w": "1",
+                "x": "0"
+              },
+              "dma": "0",
+              "external": "0",
+              "group": "GPIO",
+              "info": "Port A",
+              "name": "GPIOA",
+              "physical": "0x42020000",
+              "privilege": {
+                "p": "0",
+                "u": "0"
+              },
+              "security": {
+                "s": "1",
+                "n": "0",
+                "c": "0"
+              },
+              "shared": "0",
+              "size": "0x400",
+              "slot_name": "Pins",
+              "slot_type": "s",
+              "start": "0x52020000",
+              "uninit": "0"
+            },
+            {
+              "access": {
+                "p": "1",
+                "r": "1",
+                "w": "1",
+                "x": "0"
+              },
+              "dma": "0",
+              "external": "0",
+              "group": "DMA",
+              "info": "DMA1 Controller 1",
+              "name": "DMA1",
+              "physical": "0x40020000",
+              "privilege": {
+                "p": "0",
+                "u": "0"
+              },
+              "security": {
+                "s": "1",
+                "n": "0",
+                "c": "0"
+              },
+              "shared": "0",
+              "size": "0x400",
+              "slot_name": "Channels",
+              "slot_type": "sp",
+              "start": "0x50020000",
+              "uninit": "0",
+              "interrupt": [
+                {
+                  "info": "DMA1 Channel 1 global interrupt",
+                  "irqn": "029",
+                  "name": "DMA1_Channel1",
+                  "security": {
+                    "s": "1",
+                    "n": "0",
+                    "c": "0"
+                  }
+                },
+                {
+                  "info": "DMA1 Channel 2 global interrupt",
+                  "irqn": "030",
+                  "name": "DMA1_Channel2",
+                  "security": {
+                    "s": "1",
+                    "n": "0",
+                    "c": "0"
+                  }
+                },
+                {
+                  "info": "DMA1 Channel 3 interrupt",
+                  "irqn": "031",
+                  "name": "DMA1_Channel3",
+                  "security": {
+                    "s": "1",
+                    "n": "0",
+                    "c": "0"
+                  }
+                },
+                {
+                  "info": "DMA1 Channel 4 interrupt",
+                  "irqn": "032",
+                  "name": "DMA1_Channel4",
+                  "security": {
+                    "s": "1",
+                    "n": "0",
+                    "c": "0"
+                  }
+                },
+                {
+                  "info": "DMA1 Channel 5 interrupt",
+                  "irqn": "033",
+                  "name": "DMA1_Channel5",
+                  "security": {
+                    "s": "1",
+                    "n": "0",
+                    "c": "0"
+                  }
+                },
+                {
+                  "info": "DMA1 Channel 6 interrupt",
+                  "irqn": "034",
+                  "name": "DMA1_Channel6",
+                  "security": {
+                    "s": "1",
+                    "n": "0",
+                    "c": "0"
+                  }
+                },
+                {
+                  "info": "DMA1 Channel 7 interrupt",
+                  "irqn": "035",
+                  "name": "DMA1_Channel7",
+                  "security": {
+                    "s": "1",
+                    "n": "0",
+                    "c": "0"
+                  }
+                },
+                {
+                  "info": "DMA1_Channel 8",
+                  "irqn": "036",
+                  "name": "DMA1_Channel8",
+                  "security": {
+                    "s": "1",
+                    "n": "0",
+                    "c": "0"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Dname": "STM32L552ZETxQ",
+          "Pname": "",
+          "info": "",
+          "name": "blinky_ns",
+          "security": {
+            "s": "0",
+            "n": "1",
+            "c": "0"
+          },
+          "memory": [
+            {
+              "access": {
+                "p": "0",
+                "r": "1",
+                "w": "0",
+                "x": "1"
+              },
+              "dma": "0",
+              "external": "0",
+              "info": "Non-secure FLASH for CODE execution",
+              "name": "CODE_NS",
+              "physical": "0x08040000",
+              "privilege": {
+                "p": "0",
+                "u": "0"
+              },
+              "security": {
+                "s": "0",
+                "n": "1",
+                "c": "0"
+              },
+              "shared": "0",
+              "size": "0x40000",
+              "start": "0x08040000",
+              "startup": "0",
+              "type": "ROM",
+              "uninit": "0"
+            },
+            {
+              "access": {
+                "p": "0",
+                "r": "1",
+                "w": "1",
+                "x": "0"
+              },
+              "dma": "0",
+              "external": "0",
+              "info": "Non-secure RAM for DATA section",
+              "name": "DATA_NS",
+              "physical": "0x20000000",
+              "privilege": {
+                "p": "0",
+                "u": "0"
+              },
+              "security": {
+                "s": "0",
+                "n": "1",
+                "c": "0"
+              },
+              "shared": "0",
+              "size": "0x20000",
+              "start": "0x20000000",
+              "startup": "0",
+              "type": "RAM",
+              "uninit": "0"
+            }
+          ],
+          "peripheral": [
+            {
+              "access": {
+                "p": "1",
+                "r": "1",
+                "w": "1",
+                "x": "0"
+              },
+              "dma": "0",
+              "external": "0",
+              "group": "GPIO",
+              "info": "Port B",
+              "name": "GPIOB",
+              "physical": "0x42020400",
+              "privilege": {
+                "p": "0",
+                "u": "0"
+              },
+              "security": {
+                "s": "0",
+                "n": "1",
+                "c": "0"
+              },
+              "shared": "0",
+              "size": "0x400",
+              "slot_name": "Pins",
+              "slot_type": "s",
+              "start": "0x42020400",
+              "uninit": "0"
+            },
+            {
+              "access": {
+                "p": "1",
+                "r": "1",
+                "w": "1",
+                "x": "0"
+              },
+              "dma": "0",
+              "external": "0",
+              "group": "ADC",
+              "info": "Analog-to-Digital Converter",
+              "name": "ADC",
+              "physical": "0x42028000",
+              "privilege": {
+                "p": "0",
+                "u": "0"
+              },
+              "security": {
+                "s": "0",
+                "n": "1",
+                "c": "0"
+              },
+              "shared": "0",
+              "size": "0x400",
+              "start": "0x42028000",
+              "uninit": "0",
+              "interrupt": {
+                "info": "ADC1_2 global interrupt",
+                "irqn": "037",
+                "name": "ADC1_2",
+                "security": {
+                  "s": "0",
+                  "n": "1",
+                  "c": "0"
+                }
+              }
+            },
+            {
+              "access": {
+                "p": "1",
+                "r": "1",
+                "w": "1",
+                "x": "0"
+              },
+              "dma": "0",
+              "external": "0",
+              "group": "TIM",
+              "info": "General-purpose-timers",
+              "name": "TIM4",
+              "physical": "0x40000800",
+              "privilege": {
+                "p": "0",
+                "u": "0"
+              },
+              "security": {
+                "s": "0",
+                "n": "1",
+                "c": "0"
+              },
+              "shared": "0",
+              "size": "0x400",
+              "start": "0x40000800",
+              "uninit": "0",
+              "interrupt": {
+                "info": "TIM4 global interrupt",
+                "irqn": "047",
+                "name": "TIM4",
+                "security": {
+                  "s": "0",
+                  "n": "1",
+                  "c": "0"
+                }
+              }
+            },
+            {
+              "access": {
+                "p": "1",
+                "r": "1",
+                "w": "1",
+                "x": "0"
+              },
+              "dma": "0",
+              "external": "0",
+              "group": "USART",
+              "name": "USART2",
+              "physical": "0x40004400",
+              "privilege": {
+                "p": "0",
+                "u": "0"
+              },
+              "security": {
+                "s": "0",
+                "n": "1",
+                "c": "0"
+              },
+              "shared": "0",
+              "size": "0x400",
+              "start": "0x40004400",
+              "uninit": "0",
+              "interrupt": {
+                "info": "USART2 global interrupt",
+                "irqn": "062",
+                "name": "USART2",
+                "security": {
+                  "s": "0",
+                  "n": "1",
+                  "c": "0"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "_xmlns:xs": "http://www.w3.org/2001/XMLSchema-instance",
+      "_xs:noNamespaceSchemaLocation": "fzone.xsd"
+    }
+  }

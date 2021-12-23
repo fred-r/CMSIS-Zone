@@ -98,14 +98,14 @@ generated_code = template_function(data_object)
 ### Settings
 
 For the time being, we do not pay attention to the rzone.  
-We will convert STM32L5.azone from XML to JSON format because handlebars requires a Javascript Object as input object and JSON is supported natively by JavaScript (but XML could do the job as well).
+We will convert STM32L5.fzone from XML to JSON format because handlebars requires a Javascript Object as input object and JSON is supported natively by JavaScript (but XML could do the job as well).
 
 Also: as the developer needs to get oriented in the fields, I think JSON is far more convenient than XML.
 
 
 To do this conversion, we use an online tool: https://jsonformatter.org/xml-to-json
 
-Let's store the result in STM32L5.azone.json
+Let's store the result in STM32L5.fzone.json
 
 ### Invoking the codegen
 
@@ -120,7 +120,7 @@ The generated code will be storedin the folder: *handlebars_gen*
 The codegen is invoked this way:  
 
 ```
-node ./tools/mini_codegen --template ./handlebars/mem_layout_template.h --data ./STM32L5.azone.json --output ./handlebars_gen/mem_layout.h
+node ./tools/mini_codegen --template ./handlebars/mem_layout_template.h --data ./STM32L5.fzone.json --output ./handlebars_gen/mem_layout.h
 ```
 
 FIXME: At the moment, you need to invoke this command individually for each supported template.
