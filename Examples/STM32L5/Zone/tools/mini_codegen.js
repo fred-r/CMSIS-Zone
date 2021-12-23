@@ -19,7 +19,7 @@
  * This is some crappy code to invoke handlebars written by a C developer
  * We will not use object-oriented programming.
  * ---------------------------------------------------------------------- */
-const version = "0.0.2"
+const version = "0.0.3"
 
 /* ------- */
 /* MODULES */
@@ -47,6 +47,33 @@ let helpers = require('handlebars-helpers')({
 /* ------------------ */
 /* HANDLEBARS HELPERS */
 /* ------------------ */
+let my_global_counter;    /* a global value that gets updated by handlebar */
+
+/**
+ * Initializes the global counter and returns it.
+ * @param  {integer} value The value to be set in the global counter
+ * @return nothing
+ */
+ handlebars.registerHelper("init_global", function(value) {
+    my_global_counter = value;
+ });
+
+/**
+ * Updates the global counter and returns it.
+ * @param  {integer} inc The value to be added to the global counter
+ * @return nothing
+ */
+ handlebars.registerHelper("increment_global", function(inc) {
+    my_global_counter += inc;
+ });
+
+ /**
+ * Returns the global counter.
+ * @return nothing
+ */
+  handlebars.registerHelper("get_global", function(options) {
+    return my_global_counter;
+  });
 
 /**
  * Parse the command line arguments.
@@ -65,6 +92,116 @@ handlebars.registerHelper("hex_add", function (hex_str1, hex_str2) {
     return "hex_add error";
   });
 
+
+/**
+ * Converts a string into an integer .
+ * @param  {string} str The string to be converted (integer in decimal format)
+ * @return the integer value
+ */
+handlebars.registerHelper("str2int", function(str) {
+        return parseInt(str,10);
+});
+
+/**
+ * Formats an integer in hexadecimal format
+ * @param  {integer} value The value to be displayed in hexadecimal format
+ * @return the integer value
+ */
+ handlebars.registerHelper("show_hex", function(value) {
+    return (value.toString(16).toUpperCase());
+ });
+
+/**
+ * Stores a value in a variable.
+ * @param  {string} varName name of the variable
+ * @param  {string} varValue value of the variable
+ * @param  {???} options options-object
+ * @return nothing
+ */
+  handlebars.registerHelper("setVar", function(varName, varValue, options) {
+    options.data.root[varName] = varValue;
+  });
+
+/**
+ * retrieves the value from variable.
+ * @param  {string} varName name of the variable
+ * @param  {???} options options-object
+ * @return value stored in the variable
+ */
+ handlebars.registerHelper("getVar", function(varName, options) {
+    return(options.data.root[varName]);
+ });
+
+/**
+ * Addition.
+ * @param  {integer} a First element to add
+ * @param  {integer} b Second element to add
+ * @return the sum of the two arguments as an integer
+ */
+ handlebars.registerHelper("add", function (a, b) {
+    return (a+b);
+ });
+
+/**
+ * Substraction.
+ * @param  {integer} a First element
+ * @param  {integer} b Second element
+ * @return a - b as an integer
+ */
+ handlebars.registerHelper("sub", function (a, b) {
+    return (a-b);
+ });
+
+/**
+ * Multiplication.
+ * @param  {integer} a First element
+ * @param  {integer} b Second element
+ * @return the multiplication of the two arguments as an integer
+ */
+ handlebars.registerHelper("mult", function (a, b) {
+    return (a*b);
+ });
+
+/**
+ * Returns the power P of the input value
+ * @param  {integer} value The value
+ * @param  {integer} power The power
+ * @return math.pow(value,power)
+ */
+ handlebars.registerHelper("power", function(value, power) {
+    return Math.pow(value, power);
+ });
+
+
+/**
+ * Repeats block n times and pass the counter as a aprameter to the template function.
+ * @param  {integer} n repeat the block n times
+ * @param  {string} block the block to be repeated (pattern)
+ * @return the generated text where block is interpreted n times, each time with the current counter value as a parameter
+ */
+handlebars.registerHelper('block_loop', function(n, block) {
+    var output_text = '';
+    for(var i = 0; i < n; ++i)
+        output_text += block.fn(i);
+    return output_text;
+});
+
+
+/**
+ * Check if a value is in the given range.
+ * @param  {integer} val value to be checked
+ * @param  {integer} min range.min
+ * * @param  {integer} max range.max
+ * @return true if in the range, false otherwise
+ */
+ handlebars.registerHelper("is_in_range", function (val, min, max) {
+    if ( (val >= min) && (val <= max) ) {
+        return true;
+    } else {
+        return false;
+    }
+  });
+
 /* ------- */
 /* HELPERS */
 /* ------- */
@@ -79,21 +216,21 @@ function invokeCodegen() {
         handlebars_template_string = fs.readFileSync(codegen_template).toString();
       } catch (error) {
         console.log("[ERROR] " + error);
-      }    
+      }
 
     /* Load the configuration data into a javascript object */
     try {
         dictionary = fs.readFileSync(fzone_data).toString();
       } catch (error) {
         console.log("[ERROR] " + error);
-      }    
+      }
     data_object = JSON.parse(dictionary);
 
     /* Generate the template function by processing the template string*/
     template_function = handlebars.compile(handlebars_template_string)
 
     /* Generate the code by taking into account the data object */
-    generated_code = template_function(data_object)    
+    generated_code = template_function(data_object)
 
     /* Generate the output file */
     try {
@@ -116,12 +253,12 @@ function setGlobals() {
             console.log("[INFO]: codegen template is " + codegen_template);
         } else {
             console.log("[ERROR]: template file not found");
-            process.exit();            
+            process.exit();
         }
     }
     else {
         console.log("[ERROR]: need a codegen template as 1st input parameter.");
-        process.exit();        
+        process.exit();
     }
 
     /* fzone settings  */
@@ -131,14 +268,14 @@ function setGlobals() {
             console.log("[INFO]: configuration settings taken from " + fzone_data);
         } else {
             console.log("[ERROR]: data file not found");
-            process.exit();            
+            process.exit();
         }
     }
     else {
         console.log("[ERROR]: need a data as 2nd input parameter.");
-        process.exit();        
+        process.exit();
     }
-    
+
     /* codegen template */
     if (argv.output) {
         generated_file = argv.output;
@@ -146,8 +283,8 @@ function setGlobals() {
     }
     else {
         console.log("[ERROR]: need an output file name as 3rd input parameter.");
-        process.exit();        
-    }    
+        process.exit();
+    }
 }
 
 /**
