@@ -163,6 +163,16 @@ handlebars.registerHelper("str2int", function(str) {
  });
 
 /**
+ * Division.
+ * @param  {integer} a First element
+ * @param  {integer} b Second element
+ * @return the division of the two arguments as an integer
+ */
+ handlebars.registerHelper("div", function (a, b) {
+  return (a/b);
+});
+
+/**
  * Returns the power P of the input value
  * @param  {integer} value The value
  * @param  {integer} power The power
@@ -201,6 +211,45 @@ handlebars.registerHelper('block_loop', function(n, block) {
         return false;
     }
   });
+
+
+
+/**
+ * Converts val as 32-bit unsigned integer to 8 digits hexadecimal number.
+ * @param  {integer} val The value to be printed as 0x........
+ * @return string formatted as 0x........
+ */
+function hex32(val) {
+  var hex = val.toString(16).toUpperCase();
+  hex = hex.padStart(8, "0")
+  return "0x"+hex;
+}
+
+/**
+ * Computes a 32-bit register value from an array of bits.
+ * @param  {integer} idx The value of the first index in the array of bits
+ * @param  {array} array The array of bits (at least 32 bits long after idx)
+ * @return the value stored in the register
+ */
+ handlebars.registerHelper("compute_reg_value", function(idx, array) {
+  let value = 0;
+  for(var i = 0; i < 32; i++) {
+    value = value + (parseInt(array[idx + i],10) * Math.pow(2, i));
+  }
+  return(hex32(value));
+});
+
+/**
+ * String replacement
+ * @param  {string} find Pattern to be replaced
+ * @param  {string} replace Pattern to be inserted
+ * @param  {???} options options-object
+ * @return the result string (replacement performed)
+ */
+handlebars.registerHelper('replace', function( find, replace, options) {
+  var string = options.fn(this);
+  return string.replace( find, replace );
+});
 
 /* ------- */
 /* HELPERS */
