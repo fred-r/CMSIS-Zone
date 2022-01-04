@@ -1,0 +1,84 @@
+#! armclang -E --target=arm-arm-none-eabi -mcpu=cortex-m33 -I../ -xc
+
+#include "mem_layout.h"
+
+; *------- <<< Use Configuration Wizard in Context Menu >>> ------------------
+
+;<h> Stack Configuration
+;  <o> Stack Size (in Bytes) <0x0-0xFFFFFFFF:8>
+;</h>
+#define STACK_SIZE 0x400
+
+;<h> Heap Configuration
+;  <o> Heap Size (in Bytes) <0x0-0xFFFFFFFF:8>
+;</h>
+#define HEAP_SIZE 0xC00
+
+; *-------------- <<< end of configuration section >>> -----------------------
+{{! For the sake of simplicity, I consider that the regions in the fzone are already sorted by start address }}
+{{setVar "first_LR" "true" ~}}
+{{! Loop on all regions to get the secure ones }}
+{{#each fzone.system.memory as |memory|}}
+{{#if (eq memory.security.s "1")}}
+{{#if (eq ../first_LR "true")}}
+{{setVar "first_LR" "false" ~}}
+LR_{{memory.name}} REGION_{{memory.name}}_START REGION_{{memory.name}}_SIZE {
+{{#if (eq memory.access.x "1")}}
+{{! First executable region receives the reset handler }}
+  ER_{{memory.name}} REGION_{{memory.name}}_START REGION_{{memory.name}}_SIZE {
+  	* (RESET,+FIRST)
+    * (InRoot$$Sections)
+    .ANY (+RO +XO)
+  }
+{{/if}}
+{{! Add all data regions to first load region }}
+{{setVar "first_DR" "true" ~}}
+{{#each @root.fzone.system.memory as |data_memory|}}
+{{#if (and (eq data_memory.security.s "1") (eq data_memory.access.w "1"))}}
+{{#if (eq ../../first_DR "true")}}
+{{setVar "first_DR" "false" ~}}
+{{! Only the first data region of the first load region deals with STACK and HEAP }}
+  RW_{{data_memory.name}} REGION_{{data_memory.name}}_START REGION_{{data_memory.name}}_SIZE-HEAP_SIZE-STACK_SIZE {
+    .ANY (+RW +ZI)
+  }
+#if HEAP_SIZE>0
+  ARM_LIB_HEAP REGION_{{data_memory.name}}_START+REGION_{{data_memory.name}}_SIZE-HEAP_SIZE-STACK_SIZE EMPTY HEAP_SIZE {
+  }
+#endif
+#if STACK_SIZE>0
+  ARM_LIB_STACK REGION_{{data_memory.name}}_START+REGION_{{data_memory.name}}_SIZE-STACK_SIZE EMPTY STACK_SIZE {
+  }
+#endif
+{{else}}
+; *---- not the first data region {{data_memory.name}}: not handled in this template as in our example we have only one secure DR ----
+{{/if}}
+{{/if}}
+{{/each}}
+{{else}}
+{{#if (eq memory.access.w "1")}}
+; *---- data region already handled in the first load region : skip {{memory.name}} ----
+{{else}}
+; *---- not the first load region {{memory.name}}: not handled in this template as in our example we have only one secure LR ----
+{{/if}}
+}
+{{/if}}
+{{/if}}
+{{/each}}
+
+{{! Loop (again) on all regions to get the VENEER ones }}
+{{setVar "first_VR" "true" ~}}
+{{#each fzone.system.memory as |memory|}}
+{{! the way to determine if we have a NSC based on the name "Veneer" does not sound good to me + cannot easily have several veneers this way... but I did not really get how the ftl works here}}
+{{#if (and (eq memory.security.c "1") (eq memory.name "Veneer"))}}
+{{#if (eq ../first_VR "true")}}
+{{setVar "first_VR" "false" ~}}
+LR_{{memory.name}} REGION_VENEER_START REGION_VENEER_SIZE {
+  ER_Veneer REGION_VENEER_START REGION_VENEER_SIZE {
+  	*(Veneer$$CMSE)
+  }
+}
+{{else}}
+; *---- not the frist Veneer region : not handled by our template ----
+{{/if}}
+{{/if}}
+{{/each}}

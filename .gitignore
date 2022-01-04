@@ -9,4 +9,5 @@ ftl_gen
 *.uvguix.*
 *.uvgui.*
 *.build_log.htm
+**/node_modules/*
 
