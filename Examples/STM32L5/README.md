@@ -123,4 +123,8 @@ The codegen is invoked this way:
 node ./tools/mini_codegen --template ./handlebars/mem_layout_template.h --data ./STM32L5.fzone.json --output ./handlebars_gen/mem_layout.h
 ```
 
-FIXME: At the moment, you need to invoke this command individually for each supported template.
+
+If you want to generate all files at once:
+```
+$ ./codegen.sh 
+```
