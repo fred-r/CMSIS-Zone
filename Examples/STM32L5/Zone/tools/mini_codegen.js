@@ -94,12 +94,21 @@ handlebars.registerHelper("hex_add", function (hex_str1, hex_str2) {
 
 
 /**
- * Converts a string into an integer .
+ * Converts a decimal string into an integer .
  * @param  {string} str The string to be converted (integer in decimal format)
  * @return the integer value
  */
 handlebars.registerHelper("str2int", function(str) {
         return parseInt(str,10);
+});
+
+/**
+ * Converts an hex string into an integer.
+ * @param  {string} str The string to be converted (integer in hex format)
+ * @return the integer value
+ */
+ handlebars.registerHelper("hex2int", function(str) {
+  return parseInt(str,16);
 });
 
 /**
@@ -109,6 +118,16 @@ handlebars.registerHelper("str2int", function(str) {
  */
  handlebars.registerHelper("show_hex", function(value) {
     return (value.toString(16).toUpperCase());
+ });
+
+
+ /**
+ * Formats an integer in hexadecimal format (32 bits)
+ * @param  {integer} value The value to be displayed in hexadecimal format
+ * @return the integer value
+ */
+  handlebars.registerHelper("show_hex32", function(value) {
+    return hex32(value.toString(16).toUpperCase());
  });
 
 /**

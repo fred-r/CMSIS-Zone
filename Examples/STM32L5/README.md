@@ -115,7 +115,7 @@ Please refer to : CMSIS-Zone\Examples\STM32L5\Zone\tools\README.md
 for installing all required packages.
 
 The templates are in the folder: *handlebars*  
-The generated code will be storedin the folder: *handlebars_gen* 
+The generated code will be stored in the folder: *handlebars_gen* 
 
 The codegen is invoked this way:  
 

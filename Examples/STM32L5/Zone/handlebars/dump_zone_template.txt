@@ -1,0 +1,87 @@
+// Model dump
+{{! I skipped the sorting because I think it is more interesting to sort the data when creating the fzone file rather than sorting in the template, but it can be done }}
+{{! Indentation to be improved, no padding managed in this example but anyway I think it would be better to create an HTML file with proper cells, this is more the spirit of handlebars }}
+
+Memory:                                         access   security
+  name                  start       size        p r w x  s n c
+{{#each fzone.system.memory as |m|}}
+  {{m.name}}  {{m.start}}  {{m.size}}  {{m.access.p}} {{m.access.r}} {{m.access.w}} {{m.access.x}}  {{m.security.s}} {{m.security.n}} {{m.security.c}}
+{{/each}}
+
+Peripheral:                                                           access   security
+  name                  start       start_s     start_ns    size      p r w x  s n c     group
+{{#each fzone.system.peripheral as |p|}}
+  {{p.name}}  {{p.start}}  {{p.start_s}}  {{p.start_ns}}  {{p.size}}  {{p.access.p}} {{p.access.r}} {{p.access.w}} {{p.access.x}}  {{p.security.s}} {{p.security.n}} {{p.security.c}}  {{p.group}}
+{{/each}}
+
+
+{{#if fzone.system.interrupt}}
+Interrupt:                      security
+  name                  number  s n
+{{#each fzone.system.interrupt as |irq|}}
+  {{irq.name}}  {{irq.irqn}}  {{irq.security.s}} {{irq.security.n}}
+{{/each}}
+{{/if}}
+
+{{#if fzone.system.sau}}
+SAU entry:
+  start       end         nsc  info
+{{#each fzone.system.sau as |s|}}
+  {{s.start}}  {{s.end}}  {{s.nsc}}  {{s.info}}
+{{/each}}
+{{/if}}
+
+{{#if fzone.system.mpc_setup}}
+MPC entry:
+  name                                                                              Type
+{{#each fzone.system.mpc_setup as |mpc|}}
+  {{mpc.name}}  {{mpc.type}}
+  {{#if mpc.S_bit}}
+  S-bits:
+    {{#each mpc.S_bit as |s|}}{{s}}{{/each}}
+  {{/if}}
+  {{#if mpc.P_bit}}
+  P-bits:
+    {{#each mpc.P_bit as |p|}}{{p}}{{/each}}
+  {{/if}}
+{{/each}}
+{{/if}}
+
+{{#if fzone.system.reg_setup}}
+Register Setup:
+  Register                                                                          Value       Peripheral
+{{#each fzone.system.reg_setup as |reg|}}
+  {{#replace "-&gt;" "->"}}{{reg.name}}{{/replace}}
+  {{! The fzone provides a direct value or an array for the value(s) to be set}}
+  {{init_global 0 ~}}
+  {{#if (isArray reg.value)}}
+    {{#each reg.value}}
+{{this}}   /* {{lookup ../peripheral @index}} {{lookup ../slot @index}}*/
+    {{increment_global (hex2int this) ~}}
+    {{/each}}
+  {{else}}
+{{reg.value}}   /* {{reg.peripheral}} {{reg.slot}}*/
+    {{increment_global (hex2int reg.value) ~}}
+  {{/if}}
+
+                                                                                  ----------
+                                                                                    0x{{show_hex32 (get_global)}}
+
+{{/each}}
+{{/if}}
+
+Zones:
+{{#each fzone.zone as |z|}}
+  {{z.name}}
+  - Dname     : {{z.Dname}}
+  - Pname     : {{z.Pname}}
+  - info      : {{z.info}}
+  - name      : {{z.name}}
+  - security  : {{#if (eq z.security.s "1")}}secure{{else}}non-secure{{/if}}
+  {{#each z.memory as |m|}}
+  - memory    : {{m.name}}               ({{m.start}} : {{m.size}})
+  {{/each}}
+  {{#each z.peripheral as |p|}}
+  - peripheral: {{p.name}}               ({{p.start}} : {{p.size}})
+  {{/each}}
+{{/each}}
